@@ -2,7 +2,7 @@
 require_once("./assets/header.php");
 require_once("./config/dbconnect.php");
 var_dump($_POST);
-$mangaId = $_POST["identifiant"];
+$mangaId = $_POST["id"];
 
 if($conn):
 
