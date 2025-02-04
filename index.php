@@ -13,7 +13,7 @@ require_once("./config/dbconnect.php");
 <p><?=$value["description"]?></p>
 <p><?=$value["nbtomes"]?></p>
 <p><?=$value["auteur"]?></p>
-<p><?=$value["img"]?></p>
+<img src="<?=$value["img"]?>" alt="img manga">
     <form action="./delete.php" method="post">
         <input type="hidden" name="id" value="<?php echo $value["id"]; ?>">
         <input type="submit" value="Supprimer le manga">
