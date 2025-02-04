@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass -c": "sass --watch ./index.scss ./style.css --style=compressed",
+    "sass -c": "sass --watch ./assets/css/index.scss ./assets/css/style.css",
     "com": "echo \"--style=compressed\""
   },
   "author": "",
