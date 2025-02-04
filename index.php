@@ -9,7 +9,11 @@ require_once("./config/dbconnect.php");
     if($exec):
     foreach($result as $key => $value):
 ?>
-<p><?=$value?></p>
+<p><?=$value["titre"]?></p>
+<p><?=$value["description"]?></p>
+<p><?=$value["nbtomes"]?></p>
+<p><?=$value["auteur"]?></p>
+<p><?=$value["img"]?></p>
 <?php endforeach;
 endif; 
 endif;
