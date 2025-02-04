@@ -3,5 +3,5 @@ return [
     'host' => 'localhost',
     'dbname' => 'manga',
     'username' => 'root',
-    'password' => ''
+    'password' => 'root'
 ];
