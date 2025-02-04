@@ -16,9 +16,14 @@ require_once("./config/dbconnect.php");
 <p><?=$value["img"]?></p>
     <form action="./delete.php" method="post">
         <input type="hidden" name="id" value="<?php echo $value["id"]; ?>">
-        <input type="submit" value="Supprimer l'utilisateur">
+        <input type="submit" value="Supprimer le manga">
     </form>
 <?php endforeach;
+    ?>
+    <form action="./formAddManga.php" method="post">
+    <input type="submit" value="Ajouter un nouveau manga">
+    </form>
+<?php
 endif; 
 endif;
 require_once("./assets/footer.php")?>
