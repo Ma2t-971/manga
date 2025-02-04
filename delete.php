@@ -2,7 +2,7 @@
     
     require_once("./config/dbconnect.php");
 
-    $mangasId = $_POST["identifiant"];
+    $mangasId = $_POST["id"];
 
     if($conn):?>
          <?php 
@@ -12,6 +12,7 @@
         if($exec):
         ?>
             <h1>Suppression effectuée</h1>
+            <a href="./index.php">Retourner</a>
         <?php endif; ?>
     
 <?php endif;?>

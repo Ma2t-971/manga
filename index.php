@@ -14,6 +14,10 @@ require_once("./config/dbconnect.php");
 <p><?=$value["nbtomes"]?></p>
 <p><?=$value["auteur"]?></p>
 <p><?=$value["img"]?></p>
+    <form action="./delete.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $value["id"]; ?>">
+        <input type="submit" value="Supprimer l'utilisateur">
+    </form>
 <?php endforeach;
 endif; 
 endif;
