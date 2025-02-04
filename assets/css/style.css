@@ -14,6 +14,25 @@ h1 {
   text-align: center;
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+  background-color: orangered;
+  margin-bottom: 2rem;
+}
+nav a {
+  text-decoration: none;
+  padding: 1rem;
+  font-weight: 600;
+  color: #000;
+  transition: all 0.3s;
+}
+nav a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
 .container {
   min-height: 80dvh;
   display: flex;
@@ -32,6 +51,15 @@ h1 {
 input,
 textarea {
   padding: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  flex: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
