@@ -6,7 +6,7 @@ $mangaId = $_POST["identifiant"];
 
 if($conn):
 
-    $requeteFind = "SELECT * FROM users WHERE id = $mangaId";
+    $requeteFind = "SELECT * FROM mangas WHERE id = $mangaId";
 
         $exec = $conn->query($requeteFind);
 
