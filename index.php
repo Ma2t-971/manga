@@ -18,11 +18,13 @@ require_once("./config/dbconnect.php");
         <input type="hidden" name="id" value="<?php echo $value["id"]; ?>">
         <input type="submit" value="Supprimer le manga">
     </form>
+    <form action="form-update.php" method="post">
+        <input type="hidden" name="id" value="<?php echo $value["id"]; ?>">
+        <input type="submit" value="Modifier le manga">
+    </form>
 <?php endforeach;
     ?>
-    <form action="./formAddManga.php" method="post">
-    <input type="submit" value="Ajouter un nouveau manga">
-    </form>
+    <a href="./formAddManga.php">Ajouter un nouveau manga</a>    
 <?php
 endif; 
 endif;

@@ -15,4 +15,6 @@
             <a href="./index.php">Retourner</a>
         <?php endif; ?>
     
-<?php endif;?>
+<?php endif;
+header("Location: ./index.php");
+?>
