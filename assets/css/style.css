@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,31 @@
 
 
 
+
 .deleteBtn{
     border: red solid 3px;
     border-radius: 8px;
+h1 {
+    text-align: center;
+}
+
+
+.container {
+    min-height: 80dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulaire {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input,
+textarea {
+    padding: 1rem;
 }
