@@ -12,4 +12,5 @@ require_once("./config/dbconnect.php");
 <p><?=$value?></p>
 <?php endforeach;
 endif; 
-endif;?>
+endif;
+require_once("./assets/footer.php")?>
