@@ -1,12 +1,12 @@
 <?php 
     
-    require_once("../config/dbconnect.php");
+    require_once("./config/dbconnect.php");
 
     $mangasId = $_POST["identifiant"];
 
     if($conn):?>
          <?php 
-            $requete = "DELETE FROM mangas WHERE id = $prodId";
+            $requete = "DELETE FROM mangas WHERE id = $mangasId";
             $exec = $conn->query($requete);
 
         if($exec):
