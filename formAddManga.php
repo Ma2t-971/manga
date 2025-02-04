@@ -1,11 +1,4 @@
 <?php require_once('./assets/header.php');?>
-    <header>
-        <nav>
-            <a href="./index.php">Accueil</a>
-            <a href="./select.php">Liste des mangas</a>
-            <a class="active" href="./formAddManga.php">Ajouter manga</a>
-        </nav>
-    </header>
     <h1>Ajout d'un nouveau manga</h1>
     <main>
         <div class="container">

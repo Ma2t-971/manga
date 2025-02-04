@@ -8,3 +8,9 @@
     <title>Mangas</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="./index.php">Accueil</a>
+            <a href="./formAddManga.php">Ajouter manga</a>
+        </nav>
+    </header>
