@@ -40,6 +40,14 @@ nav a:hover {
   align-items: center;
 }
 
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 .formulaire {
   flex: 1;
   max-width: 450px;
@@ -60,6 +68,12 @@ textarea {
 
 .btn {
   flex: 1;
+}
+
+img {
+  max-width: 200px;
+  object-fit: cover;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

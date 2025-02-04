@@ -8,7 +8,7 @@
                 <input type="number" min="1" name="nbtomes" placeholder="Nombre tomes">
                 <input type="text" name="img" placeholder="Url de l'image">
                 <textarea rows="10" name="desc" placeholder="Description"></textarea>
-                <div class="buttons"><a href="./index.php"><input type="button" class="btn" value="Retour"></a><input class="btn" type="submit" value="Ajouter le nouvel utilisateur"></div>
+                <div class="buttons"><a href="./index.php"><input type="button" class="btn" value="Retour"></a><input class="btn" type="submit" value="Ajouter manga"></div>
             </form>
         </div>
     </main>
