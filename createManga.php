@@ -6,10 +6,12 @@ $nbtomes = $_POST['nbtomes'];
 $desc = $_POST['desc'];
 $img = $_POST['img'];
 session_start();
-if(trim($titre) !=='' && trim($auteur)):
+
+if(trim($titre) !=='' && trim($auteur) !==''):
     try{
         require_once('./config/dbconnect.php');
         $request = "INSERT INTO mangas (titre, description, nbtomes, auteur, img) VALUES ('$titre', '$desc', $nbtomes, '$auteur', '$img');";
+
         $exec = $conn -> query($request);
         if($exec):
             $_SESSION['message'] = "Utilisateur ajouté avec succès !";
@@ -20,7 +22,7 @@ if(trim($titre) !=='' && trim($auteur)):
         endif;
     }
     catch(Exception $e){
-        $_SESSION['message'] = "Erreur de connexion à la base !";
+        $_SESSION['message'] = "Erreur de connexion.";
         $_SESSION['message_type'] = "error";
     }
 else:
