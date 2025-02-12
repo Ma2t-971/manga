@@ -1,32 +1,42 @@
 <?php
 
-$titre = $_POST['titre'];
-$auteur = $_POST['auteur'];
-$nbtomes = $_POST['nbtomes'];
-$desc = $_POST['desc'];
-$img = $_POST['img'];
-session_start();
+$titre = htmlspecialchars($_POST['titre']);
+$auteur = htmlspecialchars($_POST['auteur']);
+$nbtomes = (int)htmlspecialchars($_POST['nbtomes']);
+$desc = htmlspecialchars($_POST['desc']);
+$img = htmlspecialchars($_POST['img']);
 
-if(trim($titre) !=='' && trim($auteur) !==''):
-    try{
+//var_dump($nbtomes);
+
+$pattern = "/^[A-Z]{1}[a-z]*$/";
+
+$tableauErreurs = [];
+
+if(!isset($titre) || empty(trim($titre))|| strlen($titre)<=1 || strlen($titre)>=256):
+    $tableauErreurs["titre"] = TRUE ;
+endif;
+if(!isset($auteur) || empty(trim($auteur))|| strlen($auteur)<=1 || strlen($auteur)>=256 || preg_match($pattern, $auteur)):
+    $tableauErreurs["auteur"] = TRUE ;
+endif;
+if(!isset($nbtomes) || empty(trim($nbtomes))|| $nbtomes<=0 ||$nbtomes>=1000 && !is_int($nbtomes)):
+    $tableauErreurs["nbtomes"] = TRUE ;
+endif;
+if(!isset($desc) || empty(trim($desc))|| strlen($desc)<=19  || strlen($desc)>=1000):
+    $tableauErreurs["desc"] = TRUE ;
+endif;
+if(!isset($img) || empty(trim($img)) || !filter_var($img, FILTER_VALIDATE_URL)):
+    $tableauErreurs["img"] = TRUE ;
+endif;
+
+if(empty($tableauErreurs)):
         require_once('./config/dbconnect.php');
         $request = "INSERT INTO mangas (titre, description, nbtomes, auteur, img) VALUES ('$titre', '$desc', $nbtomes, '$auteur', '$img');";
 
         $exec = $conn -> query($request);
-        if($exec):
-            $_SESSION['message'] = "Utilisateur ajouté avec succès !";
-            $_SESSION['message_type'] = "success";
-        else:
-            $_SESSION['message'] = "Erreur inconnue";
-            $_SESSION['message_type'] = "error";
-        endif;
-    }
-    catch(Exception $e){
-        $_SESSION['message'] = "Erreur de connexion.";
-        $_SESSION['message_type'] = "error";
-    }
+        header("Location: ./index.php");
 else:
-    $_SESSION['message'] = "Veuillez remplir tous les champs !";
-    $_SESSION['message_type'] = "error";
-endif;
-header("Location: ./index.php");
+    foreach($tableauErreurs as $key => $value): ?>
+        <p> <?=$key?>: <?=$value?></p>
+<?php  endforeach;    
+endif; ?>
+        
