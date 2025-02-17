@@ -13,11 +13,11 @@ try{
             <p><?=$value["nbtomes"]?></p>
             <p><?=$value["auteur"]?></p>
             <img src="<?=$value["img"]?>" alt="img manga">
-            <form class="formulaire" action="/C_UD/delete.php" method="post">
+            <form class="formulaire" action="<?= $cssPath?>C_UD/delete.php" method="post">
                 <input type="hidden" name="id" value="<?= $value["id"]; ?>">
                 <input type="submit" value="Supprimer le manga">
             </form>
-            <form class="formulaire" action="/form/formUpdate.php" method="post">
+            <form class="formulaire" action="<?= $cssPath?>form/formUpdate.php" method="post">
                 <input type="hidden" name="id" value="<?= $value["id"]; ?>">
                 <input type="submit" value="Modifier le manga">
             </form>
