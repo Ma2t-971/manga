@@ -3,7 +3,7 @@
 
 try{
     // si id n'existe pas ou n'est pas un nombre positif entier, on interrompt le script.
-    if (!isset($_POST["id"]) || !ctype_digit($_POST["id"]))
+    if (!isset($_POST["id"]) || !ctype_digit($_POST["id"]) || !password_verify($_POST["id"], $_POST["hashIdUpdate"]))
         die("ID invalide");
     require_once("../config/dbconnect.php");
     $mangaId = htmlspecialchars($_POST["id"]);
@@ -21,6 +21,7 @@ try{
                 <textarea name="desc"><?= $result["description"]; ?></textarea>
                 <input type="text" name="img" value="<?= $result["img"]; ?>">
                 <input type="hidden" name="id" value="<?= $result["id"]; ?>">
+                <input type="hidden" name="hashIdUpdate" value="<?= $_POST["hashIdUpdate"]; ?>">
                 <input type="submit" value="Modifier le manga">
             </form>
         </div>
