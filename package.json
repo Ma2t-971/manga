@@ -1,0 +1,16 @@
+{
+  "name": "manga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "sass":"1.83.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass -c": "sass --watch ./assets/css/index.scss ./assets/css/style.css",
+    "com": "echo \"--style=compressed\""
+  },
+  "author": "",
+  "license": "ISC"
+}
