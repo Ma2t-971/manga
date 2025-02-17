@@ -67,9 +67,11 @@ if(empty($tableauErreurs)):
             <img src="<?=$value["img"]?>" alt="img manga">
             <form class="formulaire" action="<?= $cssPath?>C_UD/delete.php" method="post">
                 <input type="hidden" name="id" value="<?= $value["id"]; ?>">
+                <input type="hidden" name="hashIdDelete" value="<?= password_hash($value["id"],PASSWORD_ARGON2ID); ?>">
                 <input type="submit" value="Supprimer le manga">
             </form>
             <form class="formulaire" action="<?= $cssPath?>form/formUpdate.php" method="post">
+                <input type="hidden" name="hashIdUpdate" value="<?= password_hash($value["id"],PASSWORD_ARGON2ID); ?>">
                 <input type="hidden" name="id" value="<?= $value["id"]; ?>">
                 <input type="submit" value="Modifier le manga">
             </form>
