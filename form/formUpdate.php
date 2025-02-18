@@ -14,7 +14,7 @@ try{
     $result = $prepare -> fetch();?>
     <main>
         <div class="container">
-            <form class="formulaire" action="/C_UD/update.php" method="post">
+            <form class="formulaire" action="<?= $cssPath?>C_UD/update.php" method="post">
                 <input type="text" name="titre" value="<?= $result["titre"]; ?>">
                 <input type="text" name="auteur" value="<?= $result["auteur"]; ?>">
                 <input type="number" name="nbtomes" value="<?= $result["nbtomes"]; ?>">                
